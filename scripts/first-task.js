@@ -92,25 +92,26 @@ const timer = createTimer();
 
 // create Person
 function createPerson(name, age) {
+    const personName = name;
+    let personAge = age;
+
     return {
-        name,
-        age,
         getName() {
-            return this.name
+            return personName
         },
         getAge() {
-            return this.age
+            return personAge
         },
         setAge(newAge) {
-            this.age = newAge
+            personAge = newAge
         }
     }
 }
 
 const person = createPerson('Svitlana', 23)
 
-// console.log('person: ', person)
-// console.log('person name: ', person.getName())
-// console.log('person age: ', person.getAge())
-// person.setAge(25)
-// console.log('person new age: ', person.getAge())
+console.log('person: ', person)
+console.log('person name: ', person.getName())
+console.log('person age: ', person.getAge())
+person.setAge(25)
+console.log('person new age: ', person.getAge())
