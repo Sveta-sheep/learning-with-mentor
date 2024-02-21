@@ -28,7 +28,7 @@ function memo(func, resolver) {
     const cache = {};
 
     return function(...args) {
-        const key = resolver ? resolver(...args) : Array.from(args).join("_");
+        const key = resolver ? resolver(...args) : args.join("_");
 
         if (key in cache) return cache[key];
 
